@@ -24,8 +24,9 @@ header::after {
 }
 
 .logo {
-  font-size: medium;
-  color: rgb(173, 173, 173);
+  font-size: 15pt;
+  text-decoration: double;
+  color: rgb(255, 255, 255);
   float: left;
   padding: 10px 0;
 }

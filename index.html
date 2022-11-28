@@ -11,11 +11,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;1,600&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
-          <h1 class="logo">Aundraya Lovely Page</h1>
+          <h1 class="logo"><span id="datetime"></span>
+            <script>
+              var dt = new Date();
+              document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+            </script></h1>
           <nav>
             <ul>
               <li><a href="#">Home</a></li>
@@ -33,13 +38,13 @@
 
     
     <div class="btn-center">
-     <br><br><br><br><br><br><br> <br><br>    
+     <br><br>  
     <div class="btn-group">
         <a href="https://github.com/notaundraya"><button>github</button></a>
         <a href="https://www.linkedin.com/in/aundraya-randolph-a3547b239/"><button>linkedin</button></a>
         <a><button>unity</button></a>
         <br>
-        <p>unity as recently deleted all my project <br> so this button does not work</p>
+        <p>unity recently deleted all my project <br> so this button does not work</p>
     </div></div>
 </body>
 </html>
