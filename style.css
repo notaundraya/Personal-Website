@@ -25,11 +25,17 @@ header::after {
 
 .logo {
   font-size: medium;
-  color: rgb(173, 173, 173);
+  color: rgb(255, 253, 253);
   float: left;
   padding: 10px 0;
 }
+.logo span {
+  color: rgb(214, 72, 162);
+}
 
+.logo span:hover {
+  color: rgb(80, 8, 53);
+}
 nav {
   float: right;
 }
