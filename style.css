@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 body {
 	margin: 0;
-	background: #222;
+	background: rgb(0, 0, 0);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
 }
@@ -24,18 +24,13 @@ header::after {
 }
 
 .logo {
-  font-size: medium;
-  color: rgb(173, 173, 173);
+  font-size: 15pt;
+  text-decoration: double;
+  color: rgb(255, 255, 255);
   float: left;
   padding: 10px 0;
 }
-.logo span {
-  color: rgb(214, 72, 162);
-}
 
-.logo span:hover {
-  color: rgb(80, 8, 53);
-}
 nav {
   float: right;
 }
@@ -95,6 +90,24 @@ nav a:hover::before {
     text-decoration: bold;
     color: rgb(93, 60, 124);   
 }
+
+.glow {
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 .main-para{
     text-align: center;
     font-size: 13pt;
