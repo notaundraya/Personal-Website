@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>aundraya</title>
+    <meta name="next-head-count" content="3">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;1,600&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1 class="logo"><span id="datetime"></span>
+            <script>
+              var dt = new Date();
+              document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+            </script>EST</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <br><br><br>
+    
+
+</body>
+</html>
