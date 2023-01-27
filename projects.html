@@ -7,20 +7,62 @@
     <meta name="next-head-count" content="3">
     <meta charset="utf-8">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;1,600&display=swap" rel="stylesheet">
     <script src="js/script.js"></script>
 </head>
 <body>
+  <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+    
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+    
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+    
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
     <header>
         <div class="container">
-          <h1 class="logo"><span id="datetime"></span>
-            <script>
-              var dt = new Date();
-              document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
-            </script>EST</h1>
+          <h1 class="logo">
+            <a href="//24timezones.com/usa_time/oh_delaware/delaware.php" style="text-decoration: none" class="clock24" id="tz24-1674845803-cu106587-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMSIsInR5cGUiOiJkIiwibGFuZyI6ImVuIn0=" title="current time in Delaware" target="_blank" rel="nofollow">Columbus, OH time</a>
+            <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+          </h1>
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
@@ -30,6 +72,22 @@
           </nav>
         </div>
     </header>
-
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('webdesign')"> Web Design</button>
+      <button class="btn" onclick="filterSelection('photography')"> Photography</button>
+    </div>
+    <div class="containerp">
+      <!-- web design -->
+      <div class="filterDiv webdesign">BMW</div>
+      <div class="filterDiv webdesign">Orange</div>
+      <div class="filterDiv webdesign">Volvo</div>
+      <div class="filterDiv webdesign">Red</div>
+      <!-- photography -->
+      <div class="filterDiv photography">Nature</div>
+      <div class="filterDiv photography">Las Vegas</div>
+      <div class="filterDiv photography">Cat</div>
+      <div class="filterDiv photography">Dog</div>
+    </div>
 </body>
 </html>
